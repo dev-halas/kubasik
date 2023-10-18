@@ -1,17 +1,20 @@
+$center-box-padding: 155px;
+
 .about-container {
     display: flex;
     justify-content: center;
     align-items: center;
     padding-top: 200px;
-    padding-bottom: 250px;
+    padding-bottom: 300px;
     position: relative;
 }
 
 .about-center-box {
-    padding: 125px;
-    background-color: #333;
+    padding: $center-box-padding;
+    background-color: $dark-grey;
     position: relative;
     aspect-ratio: 2/1;
+    margin-right: 5vw;
 
     .first-word {
         position: relative;
@@ -19,10 +22,11 @@
         &::before {
             content: '';
             position: absolute;
-            left: calc(-125px - 35px);
+            left: calc(-#{$center-box-padding} - 35px);
+            top: -5%;
             height: 70px;
             width: 70px;
-            background-color: #fff;
+            background-color: $light;
             border-radius: 50%;
             z-index: 1;
         }
@@ -30,14 +34,14 @@
         &::after {
             content: '';
             position: absolute;
-            left: calc(-125px - 8px);
+            left: calc(-#{$center-box-padding} - 8px);
             top: 14px;
             display: inline-block;
             transform: rotate(45deg);
             height: 30px;
             width: 16px;
-            border-bottom: 7px solid #222;
-            border-right: 7px solid #222;
+            border-bottom: 7px solid $dark-grey;
+            border-right: 7px solid $dark-grey;
             z-index: 2;
         }
     }
@@ -47,7 +51,7 @@
     display: flex;
     align-items: flex-end;
     aspect-ratio: 1/1;
-    width: min(21vw,275px);
+    width: min(21vw,325px);
     padding-bottom: 30px;
     padding-left: 30px;
     flex: 1;
@@ -59,22 +63,22 @@
 }
 
 .about-left-box {
-    background-color: #fff;
+    background-color: $light;
     color: #222;
     right: 100%;
     bottom: 100%;
 }
 
 .about-right-center-box {
-    background-color: red;
-    color: #fff;
-    top: 60%;
-    left: 60%;
+    background-color: $red;
+    color: $light;
+    top: 65%;
+    left: 65%;
 }
 
 .about-right-box {
-    background-color: red;
-    color: #fff;
+    background-color: $red;
+    color: $light;
     left: 100%;
     bottom: 100%;
 }
@@ -92,4 +96,6 @@
     left: 0;
     right: 0;
     z-index: -1;
+    width: 95%;
+    margin: auto;
 }

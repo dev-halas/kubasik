@@ -1,2 +1,3 @@
-//require('./js/nazwapliku');
+require('./js/gallery');
+
 import './scss/styles.scss';

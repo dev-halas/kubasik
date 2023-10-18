@@ -1,16 +1,32 @@
 .offer-container {
-    background-color: #fff;
-    color: #222;
+    background-color: $light;
+    color: $dark;
     padding: 50px;
     padding-top: 0;
 }
 
 .offer-link {
-    background-color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    background-color: $red;
     padding: 15px 35px;
-    color: #fff;
+    color: $light;
     text-transform: uppercase;
     text-align: center;
+    position: relative;
+    @include transition(background-color);
+
+    &:hover {
+        background-color: $dark;
+        @include transition(background-color);
+    }
+}
+
+.right-arrow {
+    font-size: 30px;
+    margin-bottom: 4px;
 }
 
 .offer-header-container {
@@ -29,10 +45,10 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 1vw;
+}
 
-    .offer-item {
-        display: grid;
-    }
+.offer-item {
+    display: grid;
 
     .offer-image {
         aspect-ratio: 2/1;
@@ -40,21 +56,60 @@
         display: flex;
         align-items: center;
         justify-content: center;
-
+    
         &.red {
-            background-color: red;
+            background-color: $red;
         }
     }
-
+    
     .offer-text {
-        padding: 30px;
+        padding: 40px;
+    }
+
+    &.grey {
+        display: none;
+
+        .offer-image {
+            background-color: $dark-grey;
+        }
+        
+        .offer-text {
+            background-color: $grey;
+            color: $light;
+        }
     }
 }
 
 .offer-link-all {
     display: flex;
-    align-items: flex-end;
+    flex-direction: column;
+    justify-content: flex-end;
     padding-left: 30px;
     padding-bottom: 30px;
-    background-color: gray;
+    background-color: $grey;
+    color: $light;
+}
+
+.offer-nav-buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px !important;
+
+    .offer-nav-button {
+        font-size: 2rem;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        background-color: $dark;
+        color: $light;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        font-size: 1.5rem;
+        margin-right: 15px;
+
+        &.current {
+            background-color: $red;
+        }
+    }
 }
