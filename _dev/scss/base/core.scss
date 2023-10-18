@@ -9,6 +9,8 @@ body {
     font-family: 'Poiret One', cursive;
     background-color: #fff;
     */
+    background-color: #222;
+    color: #fff;
 }
 h1, h2, h3, h4 {
     /*
@@ -28,6 +30,10 @@ h1 {
     font-weight: 800;
 }
 
+.h1 {
+    @extend h1;
+}
+
 h2 {
     font-size: 1.8rem;
     font-weight: 800;
@@ -36,6 +42,10 @@ h2 {
 h3 {
     font-size: 1.6rem;
     font-weight: 600;
+}
+
+.h3 {
+    @extend h3;
 }
 
 h4 {
@@ -84,6 +94,11 @@ $containerMobile: 90vw;
     @include responsive('tablet') {
         width: min($containerMobile, 900px);
     }
+}
+
+.container-big {
+    @extend .container;
+    width: min($containerMobile, 1600px);
 }
 
 @media screen and (max-width: 782px) {

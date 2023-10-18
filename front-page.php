@@ -1,5 +1,10 @@
 <?php get_header(); ?>
 
-GŁÓWNA
+    <main>
+        <?php 
+            get_template_part('/components/home/about');
+            get_template_part('/components/home/offer');
+        ?>
+    </main>
 
 <?php get_footer(); ?>
