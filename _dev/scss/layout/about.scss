@@ -1,4 +1,5 @@
-$center-box-padding: 155px;
+$center-box-padding: 125px;
+$center-box-padding-small: 40px;
 
 .about-container {
     display: flex;
@@ -7,6 +8,14 @@ $center-box-padding: 155px;
     padding-top: 200px;
     padding-bottom: 300px;
     position: relative;
+
+    @include responsive('tablet') {
+        padding-bottom: 450px;
+    }
+
+    @include responsive('small') {
+        padding-bottom: 325px;
+    }
 }
 
 .about-center-box {
@@ -15,6 +24,15 @@ $center-box-padding: 155px;
     position: relative;
     aspect-ratio: 2/1;
     margin-right: 5vw;
+
+    @include responsive('small') {
+        padding: 70px $center-box-padding-small;
+        margin-right: 0;
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 
     .first-word {
         position: relative;
@@ -29,6 +47,12 @@ $center-box-padding: 155px;
             background-color: $light;
             border-radius: 50%;
             z-index: 1;
+
+            @include responsive('small') {
+                left: calc(-#{$center-box-padding-small} - 20px);
+                height: 40px;
+                width: 40px;
+            }
         }
 
         &::after {
@@ -43,6 +67,15 @@ $center-box-padding: 155px;
             border-bottom: 7px solid $dark-grey;
             border-right: 7px solid $dark-grey;
             z-index: 2;
+
+            @include responsive('small') {
+                left: calc(-#{$center-box-padding-small} - 6px);
+                top: 7px;
+                height: 20px;
+                width: 12px;
+                border-bottom: 4px solid $dark-grey;
+                border-right: 4px solid $dark-grey;
+            }
         }
     }
 }
@@ -60,6 +93,15 @@ $center-box-padding: 155px;
     h4 {
         line-height: 1;
     }
+
+    @include responsive('tablet') {
+        padding-bottom: 15px;
+        padding-left: 15px;
+    }
+
+    @include responsive('small') {
+        width: 150px;
+    }
 }
 
 .about-left-box {
@@ -67,6 +109,11 @@ $center-box-padding: 155px;
     color: #222;
     right: 100%;
     bottom: 100%;
+
+    @include responsive('tablet') {
+        right: unset;
+        left: 0;
+    }
 }
 
 .about-right-center-box {
@@ -74,6 +121,11 @@ $center-box-padding: 155px;
     color: $light;
     top: 65%;
     left: 65%;
+
+    @include responsive('small') {
+        top: 85%;
+        left: 50%;
+    }
 }
 
 .about-right-box {
@@ -81,6 +133,11 @@ $center-box-padding: 155px;
     color: $light;
     left: 100%;
     bottom: 100%;
+
+    @include responsive('tablet') {
+        bottom: -100%;
+        left: -100%;
+    }
 }
 
 .vector {
@@ -98,4 +155,11 @@ $center-box-padding: 155px;
     z-index: -1;
     width: 95%;
     margin: auto;
+
+    & > img {
+        @include responsive('mobile') {
+            height: 140px;
+            object-fit: cover;
+        }
+    }
 }

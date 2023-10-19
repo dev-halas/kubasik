@@ -2,7 +2,6 @@ const items = [...document.querySelectorAll('.offer-item')];
 const ul = document.querySelector('.offer-nav-buttons');
 
 const numberOfImagesOnPage = 12;
-const docFrag = document.createDocumentFragment();
 
 let currentImagesPage = 0;
 let visibleItems = [];
@@ -21,6 +20,8 @@ const displayImagesOnPage = () => {
 }
 
 const createNavigationButtons = () => {
+    const docFrag = document.createDocumentFragment();
+
     for (let idx = 0; idx < numberOfImages; idx++) {
         const li = document.createElement("li");
         const button = document.createElement("button");
@@ -30,7 +31,9 @@ const createNavigationButtons = () => {
         docFrag.appendChild(li);
     }
     
-    ul.appendChild(docFrag);
+    if (ul) {
+        ul.appendChild(docFrag);
+    }
 }
 
 const addButtonEvent = () => {
