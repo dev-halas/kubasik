@@ -3,19 +3,21 @@
     add_action('init','theme_init_posttypes');
     
     function theme_init_posttypes() {
+
+        add_theme_support('post-thumbnails');
         
-        $cp_args = array( 'labels' => array(
-            'name' => 'Custom Post',
-            'singular_name' => 'Custom Post',
-            'all_items' => 'Wszystkie Custom Post',
-            'add_new' => 'Dodaj nową Custom Post',
-            'add_new_item' => 'Dodaj nową Custom Post',
-            'edit_item' => 'Edytuj Custom Post',
-            'new_item' => 'Nowa restauracja',
-            'view_item' => 'Zobacz Custom Post',
-            'search_items' => 'Szukaj Custom Post',
-            'not_found' => 'Nie znaleziono żadnych Custom Post', 
-            'not_found_in_trash' => 'Nie znaleziono żadnych Custom Post w koszu', 
+        $product_args = array( 'labels' => array(
+            'name' => 'Produkty',
+            'singular_name' => 'Produkt',
+            'all_items' => 'Wszystkie Produkty',
+            'add_new' => 'Dodaj nowy produkt',
+            'add_new_item' => 'Dodaj nowy produkt',
+            'edit_item' => 'Edytuj Produkt',
+            'new_item' => 'Nowy produkt',
+            'view_item' => 'Zobacz produkt',
+            'search_items' => 'Szukaj produktów',
+            'not_found' => 'Nie znaleziono żadnych produktów', 
+            'not_found_in_trash' => 'Nie znaleziono żadnych produktów w koszu', 
             'parent_item_colon' => ''
         ),
         'public' => true, 
@@ -30,8 +32,7 @@
             'title','editor','author','thumbnail','excerpt','comments','custom-fields', 'post-formats' ),
             'has_archive' => true );
         
-        register_post_type('custom_post', $cp_args);
-
+        register_post_type('products', $product_args);
 
     }
 ?>

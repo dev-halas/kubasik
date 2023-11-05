@@ -3,10 +3,18 @@
 @import "./base/typography.scss";
 @import "./base/core.scss";
 
+@import "./layout/header.scss";
+
 
 /* ------ Layouts ------ */
+@import "./layout/hero.scss";
 @import "./layout/about.scss";
 @import "./layout/offer.scss";
-
+@import "./layout/contactForm.scss";
 
 /* ------ Components ------ */
+
+
+/* ------ Footer ---------- */
+
+@import "./layout/footer.scss";

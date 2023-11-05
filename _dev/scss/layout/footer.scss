@@ -1,0 +1,109 @@
+.footer {
+    position: relative;
+}
+
+.footerInner {
+    display: grid;
+    padding: 80px 0;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 36px;
+    @include responsive('small') {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.footerAdress, .footerMenu {
+    span {
+        color: $red;
+        font-weight: 700;
+        font-size: 18px;
+    }
+
+    ul {
+        margin-top: 32px;
+    }
+
+    a, div {
+        text-transform: capitalize;
+        line-height: 1.5;
+    }
+    div {
+        margin-top: 32px;
+    }
+}
+
+.footerContact {
+    @include responsive('small') {
+        grid-column: span 2;
+    }
+}
+
+.footerContact__item {
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+
+    .footerContact__itemImg {
+        background-color: $red;
+        padding: 10px;
+        aspect-ratio: 1 / 1;
+        object-fit: contain;
+        height: 82px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    span {
+        width: 100%;
+        padding: 10px 20px;
+        background-color: $grey;
+        display: flex;
+        align-items: center;
+    }
+}
+
+.footerContact__cat {
+    font-weight: 700;
+    font-size: 18px;
+    margin-left: 102px;
+    margin-bottom: 8px;
+}
+
+
+.footerCopy {
+    padding: 48px 0;
+    border-top: 1px solid $white;
+    max-width: 850px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    span {
+        padding: 0 24px;
+    }
+
+    span:nth-child(2) {
+        border-left: 1px solid $white;
+        border-right: 1px solid $white;
+    }
+
+    @include responsive('small') {
+        flex-direction: column;
+        max-width: 90vw;
+        padding: 24px 0;
+        span:nth-child(2) {
+            border: 0;
+        }
+    }
+}
+
+#map {
+    min-height: 500px;
+}
+
+#mapContent {
+    color: $grey;
+    font-weight: 400;
+}

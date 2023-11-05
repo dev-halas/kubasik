@@ -132,3 +132,22 @@ $containerMobile: 90vw;
     -ms-transition-duration: .3s;
     -o-transition-duration: .3s;
 }
+
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    background-color: $red;
+    padding: 15px 35px;
+    color: $light;
+    text-transform: uppercase;
+    text-align: center;
+    position: relative;
+    @include transition(background-color);
+
+    &:hover {
+        background-color: $dark;
+        @include transition(background-color);
+    }
+}
